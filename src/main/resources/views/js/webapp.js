@@ -29,7 +29,7 @@ var app = {
 		var projectType = $('#projectType .current').text();
 		var comments = $('#comment');
 		var mobileReg = /^0?1[3|4|5|7|8][0-9]\d{8}$/;
-		var url = 'http://www.yunwoke.com/mail/smtp.php';
+		var url = 'leave';
 		if (nickname.val() === '') {
 			return alert('请输入您的昵称');
 		}
@@ -43,16 +43,16 @@ var app = {
 			return alert('请选择产品所属行业');
 		}
 		var foo = {
-			cellPhone: cellPhone.val(),
-			nickname: nickname.val(),
-			business: business.val(),
-			projectType: projectType,
-			comments: comments.val()
+            phone: cellPhone.val(),
+            nickName: nickname.val(),
+            industry: business.val(),
+            type: projectType,
+            remark: comments.val(),
+            "openType":type
 		}
 		sub = true;
 		$.post(url, foo, function (json) {
 			//	var result = JSON.parse(json);
-
 			if (json.status !== 100) {
 				return alert(result.message);
 			}

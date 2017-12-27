@@ -11,7 +11,7 @@ import java.io.Serializable;
  * @create 2017-12-14 18:02
  **/
 @Entity
-@Table(name = "wbtest_advistor")
+@Table(name = "wb_advistor")
 public class Advistor implements Serializable {
 
     @Id
