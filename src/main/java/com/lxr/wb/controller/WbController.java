@@ -18,7 +18,6 @@ public class WbController {
 
     @GetMapping("/{path}")
     public String dataView(@PathVariable("path") String path, HttpSession httpSession) {
-        httpSession.setAttribute("view",1);
         return path;
     }
 }
