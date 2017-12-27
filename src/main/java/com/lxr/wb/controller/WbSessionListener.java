@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.annotation.WebListener;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
@@ -21,7 +22,10 @@ import javax.servlet.http.HttpSessionListener;
 public class WbSessionListener implements HttpSessionListener {
 
     @Autowired
-    AdvistorService advistorService;
+    private HttpServletRequest request;
+
+    @Autowired
+    private AdvistorService advistorService;
 
     @Override
     public void sessionCreated(HttpSessionEvent httpSessionEvent) {
