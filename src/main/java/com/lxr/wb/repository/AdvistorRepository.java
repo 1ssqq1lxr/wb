@@ -12,7 +12,5 @@ import org.springframework.stereotype.Component;
  * @author lxr
  * @create 2017-12-26 10:51
  **/
-@SuppressWarnings("unused")
-@Component
 public interface AdvistorRepository extends JpaRepository<Advistor,Long>{
 }

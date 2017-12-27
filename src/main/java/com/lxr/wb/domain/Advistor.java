@@ -1,10 +1,8 @@
 package com.lxr.wb.domain;
 
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.io.Serializable;
 
 /**
  * 当前报警
@@ -13,11 +11,11 @@ import java.util.Date;
  * @create 2017-12-14 18:02
  **/
 @Entity
-@Table(name = "wb_advistor")
-public class Advistor {
+@Table(name = "wbtest_advistor")
+public class Advistor implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
 
@@ -26,6 +24,7 @@ public class Advistor {
 
     @Column(name = "wb_time")
     private String time;
+
 
     public Long getId() {
         return id;
@@ -50,4 +49,5 @@ public class Advistor {
     public void setTime(String time) {
         this.time = time;
     }
+
 }
