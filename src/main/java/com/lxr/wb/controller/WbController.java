@@ -36,6 +36,10 @@ public class WbController {
         }
         return map;
     }
+    @GetMapping("/")
+    public String dataIndex( HttpSession httpSession) {
+        return "redirect:index";
+    }
 
     @GetMapping("/{path}")
     public String dataView(@PathVariable("path") String path, HttpSession httpSession) {
